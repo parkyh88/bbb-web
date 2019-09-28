@@ -1,13 +1,7 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-	BBB
-    </div>
-  );
-}
+const App = () => {
+  return <div className="App">BBB</div>;
+};
 
 export default App;
