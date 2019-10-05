@@ -8,13 +8,7 @@ const ContentBlock = styled.div`
   margin-right: 1rem;
   background-color: white;
   padding: 1rem 1rem;
-  box-shadow: 0 1px 11px 0 rgba(0, 0, 0, 0.1);
   border-radius: 5px;
-  @media screen and (max-width: 1024px) {
-    margin-top: 0.5rem;
-    margin-left: 0.5rem;
-    margin-right: 0.5rem;
-  }
 `;
 
 const Content = ({ children, ...rest }) => {

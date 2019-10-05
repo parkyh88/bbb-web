@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 import Responsive from './Responsive';
 import { Link } from 'react-router-dom';
-import { TiThMenu } from 'react-icons/ti';
 import DesktopMenu from './DesktopMenu';
 import MobileSidebar from './MobileSidebar';
 
@@ -24,10 +23,11 @@ const Wrapper = styled(Responsive)`
     color: black;
     text-decoration: none;
     outline: none;
+    transition: 0.2s;
     &:hover,
     &:active {
       text-decoration: none;
-      color: #4c6ef5;
+      color: #ff922b;
     }
   }
 
@@ -35,6 +35,9 @@ const Wrapper = styled(Responsive)`
     font-size: 1.125rem;
     font-weight: 800;
     letter-spacing: 2px;
+    &:hover {
+      font-size: 1.2rem;
+    }
   }
   .menu {
     display: flex;
@@ -43,7 +46,7 @@ const Wrapper = styled(Responsive)`
       display: flex;
       align-items: center;
       &:hover {
-        color: #4c6ef5;
+        color: #ff922b;
         cursor: pointer;
       }
     }
@@ -56,7 +59,7 @@ const Wrapper = styled(Responsive)`
     align-items: center;
     margin-left: auto;
     &:hover {
-      color: #4c6ef5;
+      color: #ff922b;
       cursor: pointer;
     }
   }
@@ -87,7 +90,7 @@ const Spacer = styled.div`
   height: 4rem;
 `;
 
-const Header = ({ handleMobileSidebar, isShown }) => {
+const Header = () => {
   return (
     <>
       <HeaderBlock>
@@ -107,18 +110,9 @@ const Header = ({ handleMobileSidebar, isShown }) => {
           <Link to="/" className="logo">
             BBB
           </Link>
-          <div className="right">
-            <TiThMenu
-              style={{ height: '100%' }}
-              onClick={handleMobileSidebar}
-            />
-          </div>
+          <MobileSidebar />
         </Wrapper>
       </HeaderBlock>
-      <MobileSidebar
-        handleMobileSidebar={handleMobileSidebar}
-        isShown={isShown}
-      />
       <Spacer />
     </>
   );

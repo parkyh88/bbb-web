@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState, useCallback } from 'react';
 import styled, { css, keyframes } from 'styled-components';
+import { TiThMenu } from 'react-icons/ti';
 import MobileMenu from './MobileMenu';
 import { slideInRight } from 'react-animations';
 
@@ -38,15 +39,25 @@ const MobileMenuList = styled.div`
   flex-direction: column;
 `;
 
-const MobileSidebar = ({ handleMobileSidebar, isShown }) => {
+const MobileSidebar = () => {
+  const [isShown, setIsShown] = useState(false);
+  const handleMobileSidebar = useCallback(() => {
+    setIsShown(!isShown);
+  }, [isShown]);
+
   return (
-    <MobileSidebarWrapBlock isShown={isShown} onClick={handleMobileSidebar}>
-      <MobileSidebarBlock onClick={e => e.stopPropagation()}>
-        <MobileMenuList>
-          <MobileMenu handleMobileSidebar={handleMobileSidebar} />
-        </MobileMenuList>
-      </MobileSidebarBlock>
-    </MobileSidebarWrapBlock>
+    <>
+      <div className="right">
+        <TiThMenu size={24} onClick={handleMobileSidebar} />
+      </div>
+      <MobileSidebarWrapBlock isShown={isShown} onClick={handleMobileSidebar}>
+        <MobileSidebarBlock onClick={e => e.stopPropagation()}>
+          <MobileMenuList>
+            <MobileMenu handleMobileSidebar={handleMobileSidebar} />
+          </MobileMenuList>
+        </MobileSidebarBlock>
+      </MobileSidebarWrapBlock>
+    </>
   );
 };
 
