@@ -2,26 +2,15 @@ import React from 'react';
 import styled from 'styled-components';
 
 const ResponsiveBlock = styled.div`
-  width: 1200px;
+  max-width: 1024px;
   margin: 0 auto;
+
   &[class*='__Mobile'] {
     display: none;
   }
-  @media screen and (max-width: 1200px) {
-    width: 1024px;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    &[class*='__Desktop'] {
-      display: flex;
-    }
-    &[class*='__Mobile'] {
-      display: none;
-    }
-  }
-  @media screen and (max-width: 1023px) {
+  /* 모바일 */
+  @media all and (min-width: 320px) {
     width: 100%;
-    padding-left: 1rem;
-    padding-right: 1rem;
     &[class*='__Desktop'] {
       display: none;
     }
@@ -29,13 +18,41 @@ const ResponsiveBlock = styled.div`
       display: flex;
     }
   }
-  @media screen and (max-width: 768px) {
+
+  /* 태블릿 */
+  @media all and (min-width: 768px) {
     width: 100%;
     &[class*='__Desktop'] {
       display: none;
     }
     &[class*='__Mobile'] {
       display: flex;
+    }
+  }
+
+  /* 작은 데스크탑 */
+  @media all and (min-width: 1024px) {
+    width: 100%;
+    margin-left: 2%;
+    margin-right: 2%;
+    &[class*='__Desktop'] {
+      display: none;
+    }
+    &[class*='__Mobile'] {
+      display: flex;
+    }
+  }
+  /* 큰 데스크탑 */
+  @media (min-width: 1281px) {
+    max-width: 80%;
+    width: 100%;
+    margin-right: 10%;
+    margin-left: 10%;
+    &[class*='__Desktop'] {
+      display: flex;
+    }
+    &[class*='__Mobile'] {
+      display: none;
     }
   }
 `;

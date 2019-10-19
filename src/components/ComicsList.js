@@ -40,18 +40,63 @@ const ComicListItemBlock = styled.ul`
   padding: 0;
   justify-content: space-between;
   list-style: none;
-  .comics-item {
-    flex-direction: column;
-    .comic-profile-picture {
-      border-radius: 10px;
-      height: 20rem;
-      width: 15rem;
-      object-fit: cover;
+  @media all and (min-width: 320px) {
+    .comics-item {
+      flex-direction: column;
+      .comic-profile-picture {
+        border-radius: 10px;
+        height: 8rem;
+        width: 8rem;
+        object-fit: cover;
+      }
     }
     .comic-profile-title {
       text-align: center;
     }
   }
+  @media all and (min-width: 768px) {
+    .comics-item {
+      flex-direction: column;
+      .comic-profile-picture {
+        border-radius: 10px;
+        height: 15rem;
+        width: 15rem;
+        object-fit: cover;
+      }
+    }
+    .comic-profile-title {
+      text-align: center;
+    }
+  }
+  @media all and (min-width: 1024px) {
+    .comics-item {
+      flex-direction: column;
+      .comic-profile-picture {
+        border-radius: 10px;
+        height: 20rem;
+        width: 20rem;
+        object-fit: cover;
+      }
+    }
+    .comic-profile-title {
+      text-align: center;
+    }
+  }
+  @media all and (min-width: 1281px) {
+    .comics-item {
+      flex-direction: column;
+      .comic-profile-picture {
+        border-radius: 10px;
+        height: 25em;
+        width: 25rem;
+        object-fit: cover;
+      }
+    }
+    .comic-profile-title {
+      text-align: center;
+    }
+  }
+
   .comics-item + .comics-item {
     margin-left: 1.5rem;
   }
